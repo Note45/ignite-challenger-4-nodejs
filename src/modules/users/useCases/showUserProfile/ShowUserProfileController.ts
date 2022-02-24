@@ -7,7 +7,7 @@ class ShowUserProfileController {
 
   handle(request: Request, response: Response): Response {
     try {
-      const { user_id } = request.headers as { user_id: string };
+      const { user_id } = request.params;
 
       const usersOrError = this.showUserProfileUseCase.execute({ user_id });
 
