@@ -136,6 +136,75 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "User does not haver permission!"
+          }
+        }
+      }
+    },
+    "/users/{user_id}": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Get user infos",
+        "description": "List all user infos",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "description": "ID of user to get infos",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "admin": {
+                        "type": "boolean"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "email": {
+                        "type": "string"
+                      },
+                      "created_at": {
+                        "type": "string"
+                      },
+                      "updated_at": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "example": {
+                    "id": "19f956b7-d243-4bf5-82ec-816d3d53d41e",
+                    "admin": false,
+                    "name": "User name sample",
+                    "email": "test-email-sample@test.com",
+                    "created_at": "2022-03-05T13:32:53.175Z",
+                    "updated_at": "2022-03-05T13:32:53.175Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "User not found!"
           }
         }
       }
