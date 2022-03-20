@@ -203,7 +203,7 @@
               }
             }
           },
-          "400": {
+          "404": {
             "description": "User not found!"
           }
         }
@@ -269,7 +269,7 @@
               }
             }
           },
-          "400": {
+          "404": {
             "description": "User not found!"
           }
         }
